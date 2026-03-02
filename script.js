@@ -79,7 +79,7 @@ document.getElementById("wish").innerHTML=
 
 function cutCake(){
 
-document.getElementById("cake").src="images/cake2.png";
+document.getElementById("cake").src="images/cake2.jpg";
 
 confetti({
  particleCount:300,
@@ -214,5 +214,6 @@ document.getElementById("previewImg").src=img.src;
 function closePreview(){
 document.getElementById("preview").style.display="none";
 }
+
 
 
