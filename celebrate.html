@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Celebrate</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+
+    <div class="video-container">
+  <video id="bgVideo" autoplay muted loop>
+     <source src="videos/bg.mp4" type="video/mp4">
+  </video>
+</div>
+
+<h2>It's Celebration Time 🎉</h2>
+
+<div class="cake-box">
+   <img id="cake" src="images/cake1.jpg" class="photo" onclick="cutCake()">
+   <button class="cut-btn" onclick="cutCake()">Cut Cake 🎂</button>
+   <p id="cakeMsg"></p>
+</div>
+
+
+ <p id="specialPara" class="special-para"></p>
+
+
+
+
+
+<div class="music-bar">
+   <span>🎵 Birthday Song</span>
+   <button onclick="toggleMusic()" id="musicBtn">▶</button>
+</div>
+
+<audio id="music" loop>
+  <source src="song.mp3" type="audio/mp3">
+</audio>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

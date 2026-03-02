@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memories</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+
+     <div class="video-container">
+   <video autoplay muted loop id="bgVideo">
+      <source src="videos/bg.mp4" type="video/mp4">
+   </video>
+</div>
+
+<h2>Our Beautiful Memories 💖</h2>
+
+<div class="gallery-grid">
+  <img src="images/photo1.jpg" onclick="openPreview(this)">
+  <img src="images/photo2.jpg" onclick="openPreview(this)">
+  <img src="images/photo3.jpg" onclick="openPreview(this)">
+  <img src="images/photo4.jpg" onclick="openPreview(this)">
+</div>
+
+<!-- Full Screen Preview -->
+<div id="preview" onclick="closePreview()">
+   <img id="previewImg">
+</div>
+
+<a href="celebrate.html" class="next-btn">Next ➜</a>
+
+
+<div class="music-bar">
+   <span>🎵 Birthday Song</span>
+   <button onclick="toggleMusic()" id="musicBtn">▶</button>
+</div>
+
+<audio id="music" loop>
+  <source src="song.mp3" type="audio/mp3">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
