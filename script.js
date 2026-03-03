@@ -16,6 +16,15 @@ document.getElementById("soundBtn").style.display="none";
 }
 
 
+window.addEventListener("load", ()=>{
+   const video = document.getElementById("bgVideo");
+   if(video){
+      video.play().catch(()=>{});
+   }
+});
+
+
+
 const video = document.getElementById("bgVideo");
 
 if(video){
@@ -214,6 +223,7 @@ document.getElementById("previewImg").src=img.src;
 function closePreview(){
 document.getElementById("preview").style.display="none";
 }
+
 
 
 
