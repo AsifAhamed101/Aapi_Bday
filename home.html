@@ -8,9 +8,17 @@
 <body class="dark">
 
      <div class="video-container">
-   <video autoplay muted loop id="bgVideo">
-      <source src="videos/bg.mp4" type="video/mp4">
-   </video>
+  <video 
+  id="bgVideo"
+  autoplay 
+  muted 
+  loop 
+  playsinline 
+  preload="auto"
+  poster="photo1.jpg">
+  
+  <source src="bg.mp4" type="video/mp4">
+</video>
 </div>
 
 <div class="intro-box">
@@ -34,4 +42,5 @@
 
 <script src="script.js"></script>
 </body>
+
 </html>
