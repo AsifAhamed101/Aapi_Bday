@@ -1,53 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Special Surprise</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Aapi</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="dark">
-    <div class="story-bar">
-   <div class="progress"></div>
+
+<!-- VIDEO -->
+<div class="video-container">
+  <video autoplay muted loop playsinline preload="auto" id="bgVideo">
+    <source src="bg.mp4" type="video/mp4">
+  </video>
 </div>
 
-   <div class="video-container">
-   <video autoplay muted loop playsinline id="bgVideo">
-  <source src="bg.mp4" type="video/mp4">
-</video>
-</div>
-
-
-
-<div class="intro-box">
-    <h1 class="title">✨ For My Lovely Aapi ✨</h1>
-    <button onclick="goHome()">Enter Surprise 💖</button>
-</div>
-
-<script>
-function goHome(){
-document.body.classList.add("fade-out");
-setTimeout(()=>{
-window.location="home.html";
-},600);
-}
-</script>
-
-<canvas id="hearts"></canvas>
-<div class="music-bar">
-   <span>🎵 Birthday Song</span>
-   <button onclick="toggleMusic()">▶</button>
-</div>
-
-
-<div class="music-bar">
-   <span>🎵 Birthday Song</span>
-   <button onclick="toggleMusic()" id="musicBtn">▶</button>
-</div>
-
+<!-- MUSIC -->
 <audio id="music" loop>
   <source src="song.mp3" type="audio/mp3">
 </audio>
+
+<!-- NAV -->
+<div class="nav">
+  <button onclick="showPage('home')">Home</button>
+  <button onclick="showPage('gallery')">Gallery</button>
+  <button onclick="showPage('timeline')">Timeline</button>
+  <button onclick="showPage('celebrate')">Celebrate</button>
+</div>
+
+<!-- PAGES -->
+
+<div id="home" class="page active">
+  <h1>Happy Birthday Aapi 🎉</h1>
+  <p>You are my biggest support ❤️</p>
+</div>
+
+<div id="gallery" class="page">
+  <h2>Memories 📸</h2>
+  <img src="photo1.jpg" class="photo">
+  <img src="photo2.jpg" class="photo">
+</div>
+
+<div id="timeline" class="page">
+  <h2>Our Journey 💖</h2>
+  <p>From childhood to today...</p>
+</div>
+
+<div id="celebrate" class="page">
+  <h2>Cut the Cake 🎂</h2>
+  <img id="cake" src="cake1.jpg" class="photo" onclick="cutCake()">
+  <p id="specialPara"></p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
-
