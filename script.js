@@ -159,47 +159,54 @@ setInterval(draw,30);
 
 
 
+// ===== AUDIO CONTINUOUS FIX =====
+
 const music = document.getElementById("music");
 
-let started = false;
+if (music) {
 
-document.addEventListener("click", () => {
+  // Restore time + state
+  window.addEventListener("load", () => {
 
-    if (!started && music) {
-
-        music.play()
-        .then(() => {
-            started = true;
-            localStorage.setItem("musicPlaying", "true");
-        })
-        .catch(err => console.log("Blocked:", err));
-    }
-
-}, { once: true });
-
-
-window.addEventListener("load", () => {
-
-    if (!music) return;
-
-    let savedTime = localStorage.getItem("musicTime");
-    let wasPlaying = localStorage.getItem("musicPlaying");
+    const savedTime = localStorage.getItem("musicTime");
+    const wasPlaying = localStorage.getItem("musicPlaying");
 
     if (savedTime) {
-        music.currentTime = savedTime;
+      music.currentTime = savedTime;
     }
 
     if (wasPlaying === "true") {
-        music.play().catch(()=>{});
+      music.play().catch(()=>{});
     }
-});
 
+  });
 
-setInterval(() => {
-    if (music && !music.paused) {
-        localStorage.setItem("musicTime", music.currentTime);
+  // First user interaction play (Chrome rule)
+  document.addEventListener("click", () => {
+
+    if (music.paused) {
+      music.play().catch(()=>{});
     }
-}, 1000);
+
+  }, { once: true });
+
+  // Save progress
+  setInterval(() => {
+    if (!music.paused) {
+      localStorage.setItem("musicTime", music.currentTime);
+    }
+  }, 1000);
+
+  // Save play/pause state
+  music.addEventListener("play", () => {
+    localStorage.setItem("musicPlaying", "true");
+  });
+
+  music.addEventListener("pause", () => {
+    localStorage.setItem("musicPlaying", "false");
+  });
+
+}
 
 
 
@@ -223,6 +230,7 @@ document.getElementById("previewImg").src=img.src;
 function closePreview(){
 document.getElementById("preview").style.display="none";
 }
+
 
 
 
