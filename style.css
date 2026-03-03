@@ -330,3 +330,57 @@ button{
     border-radius:25px;
 
 }
+
+
+body{
+  text-align:center;
+  font-family:sans-serif;
+  margin:0;
+  color:white;
+}
+
+.video-container{
+  display:flex;
+  justify-content:center;
+  margin:20px 0;
+}
+
+#bgVideo{
+  width:85%;
+  max-width:600px;
+  border-radius:15px;
+}
+
+.nav{
+  margin:20px;
+}
+
+.nav button{
+  margin:5px;
+  padding:10px 15px;
+  border:none;
+  border-radius:20px;
+  background:#ff0080;
+  color:white;
+}
+
+.page{
+  display:none;
+  animation:fade 0.5s;
+}
+
+.page.active{
+  display:block;
+}
+
+.photo{
+  width:200px;
+  border-radius:15px;
+  margin:10px;
+}
+
+@keyframes fade{
+  from{opacity:0}
+  to{opacity:1}
+}
+
